@@ -6,6 +6,9 @@ import { Component, VERSION } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
+  userData = {
+    email: "jeet@gmail.com"
+  };
   name = "Angular " + VERSION.major;
   onSubmit(data) {
     console.log(data);
