@@ -1,9 +1,34 @@
-<h1> Template Driven Form Tutorial </h1>
+<h1>Template Driven Form Tutorial</h1>
 
 <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
-  <input type="text" name="username" placeholder="Enter username" ngModel>
-  <br><br>
-  <input type="password" name="password" placeholder="Enter Password" ngModel>
-  <br><br>
-  <button type="submit">Login</button>
+  <input
+    type="text"
+    name="username"
+    placeholder="Enter username"
+    #email="ngModel"
+    required
+    ngModel
+    email
+  />
+  <br />
+  <span *ngIf="email.invalid && email.touched" class="error"
+    >Email is Invalid</span
+  >
+  <br /><br />
+  <input
+    type="password"
+    #password="ngModel"
+    minlength="3"
+    maxlength="10"
+    name="password"
+    placeholder="Enter Password"
+    ngModel
+    required
+  />
+  <br />
+  <span *ngIf="password.invalid && email.touched" class="error"
+    >Password is Invalid</span
+  >
+  <br /><br />
+  <button [disabled]="userForm.invalid" type="submit">Login</button>
 </form>
