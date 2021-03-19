@@ -1,0 +1,9 @@
+<h1> Template Driven Form Tutorial </h1>
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+  <input type="text" name="username" placeholder="Enter username" ngModel>
+  <br><br>
+  <input type="password" name="password" placeholder="Enter Password" ngModel>
+  <br><br>
+  <button type="submit">Login</button>
+</form>
